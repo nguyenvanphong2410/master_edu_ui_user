@@ -6,7 +6,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import {goToPageSuccess} from '@/states/modules/app';
 import styles from './styles.module.scss';
 
-function UserLayout(props) {
+function UserLayout({ children, onScrollToInfoAbout, onScrollToTop, onScrollToFeedback   }) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const goToPage = useSelector((state) => state.app.goToPage);
@@ -20,12 +20,12 @@ function UserLayout(props) {
 
   return (
     <div className="overflow-x-hidden">
-      <Header />
-      <div className={`${styles.contentUserLayout}`}>
-      {props.children}
-      </div>
-      <Footer />
+    <Header onScrollToInfoAbout={onScrollToInfoAbout} onScrollToTop={onScrollToTop} onScrollToFeedback={onScrollToFeedback}/>
+    <div className={`${styles.contentUserLayout}`}>
+      {children}
     </div>
+    <Footer />
+  </div>
   );
 }
 

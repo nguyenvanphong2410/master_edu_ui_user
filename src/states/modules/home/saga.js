@@ -5,12 +5,12 @@ import {
 } from "redux-saga/effects";
 import { requestGetListOverviewsFail, requestGetListRevenueFail, requestGetListTransactionFail } from "./index.js";
 import { getNotification } from "@/utils/helper.js";
-import { handleGetListDataPackages } from "@/api/package/index.js";
+import { handleGetListDataCourses } from "@/api/course/index.js";
 import { setOrderCurrent } from "../order/index.js";
 import { requestConfig } from "@/api/config/index.js";
 
 function* loadRouteData() {
-  yield put(handleGetListDataPackages());
+  yield put(handleGetListDataCourses());
   yield put(requestConfig());
   yield put(setOrderCurrent(0));
 

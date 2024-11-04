@@ -5,7 +5,7 @@ export const requestCreateOrder = (idCourse, idClassRegisterOfCourse) => async (
   
   return callApi({
     method: 'post',
-    apiPath: `user/orders/package/${idCourse}/${idClassRegisterOfCourse}`,
+    apiPath: `user/orders/course/${idCourse}/${idClassRegisterOfCourse}`,
     actionTypes: [
       createOrder,
       createOrderSuccess,

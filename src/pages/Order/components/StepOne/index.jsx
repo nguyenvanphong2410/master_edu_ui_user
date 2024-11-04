@@ -11,7 +11,7 @@ function StepOne() {
   const dispatch = useDispatch();
 
   const courseSelectedToOrder = useSelector((state) => state.order.courseSelectedToOrder);
-  const classRegisterOfCourse = useSelector((state) => state.package.classRegisterOfCourse);
+  const classRegisterOfCourse = useSelector((state) => state.course.classRegisterOfCourse);
   console.log("🌈 ~ CardDoc ~ classRegisterOfCourse:", classRegisterOfCourse);
 
   const handleClickPay = () => {
@@ -24,7 +24,7 @@ function StepOne() {
       {courseSelectedToOrder._id ? (
         <div className="flex justify-center text-white w-full ">
           <div className="max-w-[620px] md:max-w-[620px] w-full">
-            <div className={styles.packagePropertiesWrap}>
+            <div className={styles.coursePropertiesWrap}>
               <div
                 className="text-3xl md:text-4xl text-[#219bf1] text-center mb-3 md:mb-6 font-bold tex capitalize"
                 style={{ fontFamily: '"Cormorant Upright", serif' }}

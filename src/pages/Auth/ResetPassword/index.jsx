@@ -14,7 +14,7 @@ function Login() {
   } = Handle();
 
   return (
-    <AuthLayout title={'Đặt lại mật khẩu'} description={'Hệ thống hoàng edu'}>
+    <AuthLayout title={'Đặt lại mật khẩu'} description={'Hệ thống Master Edu'}>
       <div className={`input-wrap mt-5`}>
         <Input.Password
           className={`base-input ${errorResetPassword && errorResetPassword.password.length > 0 ? 'error-input' : ''}`}

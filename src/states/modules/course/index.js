@@ -1,113 +1,113 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { initDataFilterCourse, initErrInfoCourse, initInfoCourse, initPaginationListCourse } from './initState';
 
-const packageSlice = createSlice({
-  name: 'package',
+const courseSlice = createSlice({
+  name: 'course',
   initialState: {
-    isLoadingCardPackages: false,
+    isLoadingCardCourses: false,
     isLoadingBtnCreateOrUpdate: false,
     isLoadingBtnDelete: false,
-    visibleModalCreateOrUpdatePackage: false,
-    visibleModalDeletePackage: false,
+    visibleModalCreateOrUpdateCourse: false,
+    visibleModalDeleteCourse: false,
 
-    packages: [],
+    courses: [],
     allCourse: [],
-    giftPackage: null,
+    giftCourse: null,
     classRegisterOfCourse: '',
 
-    infoPackages: initInfoCourse,
-    errorInfoPackages: initErrInfoCourse,
+    infoCourses: initInfoCourse,
+    errorInfoCourses: initErrInfoCourse,
 
     dataFilter: initDataFilterCourse,
     paginationListCourse: initPaginationListCourse,
-    configModalPackage: {
+    configModalCourse: {
       title: '',
       type: '',
     },
   },
   reducers: {
-    getListDataPackage: (state) => ({
+    getListDataCourse: (state) => ({
       ...state,
-      isLoadingCardPackages: true,
+      isLoadingCardCourses: true,
     }),
-    getListDataPackageSuccess: (state, action) => ({
+    getListDataCourseSuccess: (state, action) => ({
       ...state,
-      isLoadingCardPackages: false,
-      packages: action.payload.data.packages,
+      isLoadingCardCourses: false,
+      courses: action.payload.data.courses,
       paginationListCourse: {
         currentPage: action.payload.data.page,
         perPage: action.payload.data.per_page,
         totalRecord: action.payload.data.total,
       },
     }),
-    getListDataPackageFailure: (state) => ({
+    getListDataCourseFailure: (state) => ({
       ...state,
-      isLoadingCardPackages: false,
-      packages: [],
+      isLoadingCardCourses: false,
+      courses: [],
     }),
-    createPackage: (state) => ({
-      ...state,
-      isLoadingBtnCreateOrUpdate: true,
-    }),
-    createPackageSuccess: (state) => ({
-      ...state,
-      isLoadingBtnCreateOrUpdate: false,
-    }),
-    createPackageFailure: (state) => ({
-      ...state,
-      isLoadingBtnCreateOrUpdate: false,
-    }),
-    updatePackage: (state) => ({
+    createCourse: (state) => ({
       ...state,
       isLoadingBtnCreateOrUpdate: true,
     }),
-    updatePackageSuccess: (state) => ({
+    createCourseSuccess: (state) => ({
       ...state,
       isLoadingBtnCreateOrUpdate: false,
     }),
-    updatePackageFailure: (state) => ({
+    createCourseFailure: (state) => ({
       ...state,
       isLoadingBtnCreateOrUpdate: false,
     }),
-    deletePackage: (state) => ({
+    updateCourse: (state) => ({
+      ...state,
+      isLoadingBtnCreateOrUpdate: true,
+    }),
+    updateCourseSuccess: (state) => ({
+      ...state,
+      isLoadingBtnCreateOrUpdate: false,
+    }),
+    updateCourseFailure: (state) => ({
+      ...state,
+      isLoadingBtnCreateOrUpdate: false,
+    }),
+    deleteCourse: (state) => ({
       ...state,
       isLoadingBtnDelete: true,
     }),
-    deletePackageSuccess: (state) => ({
+    deleteCourseSuccess: (state) => ({
       ...state,
       isLoadingBtnDelete: false,
     }),
-    deletePackageFailure: (state) => ({
+    deleteCourseFailure: (state) => ({
       ...state,
       isLoadingBtnDelete: false,
     }),
-    setShowModalCreateOrUpdatePackage: (state, action) => ({
+    setShowModalCreateOrUpdateCourse: (state, action) => ({
       ...state,
-      visibleModalCreateOrUpdatePackage: action.payload,
+      visibleModalCreateOrUpdateCourse: action.payload,
     }),
-    setShowModalDeletePackage: (state, action) => ({
+    setShowModalDeleteCourse: (state, action) => ({
       ...state,
-      visibleModalDeletePackage: action.payload,
+      visibleModalDeleteCourse: action.payload,
     }),
-    setConfigModalPackage: (state, action) => ({
+    setConfigModalCourse: (state, action) => ({
       ...state,
-      configModalPackage: action.payload,
+      configModalCourse: action.payload,
     }),
-    setInfoPackages: (state, action) => ({
+    setInfoCourses: (state, action) => ({
       ...state,
-      infoPackages: action.payload,
+      infoCourses: action.payload,
     }),
-    setErrorInfoPackages: (state, action) => ({
+    setErrorInfoCourses: (state, action) => ({
       ...state,
-      errorInfoPackages: action.payload,
+      errorInfoCourses: action.payload,
     }),
-    changeHighlightPackage: (state) => ({
-      ...state,
-    }),
-    changeHighlightPackageSuccess: (state) => ({
+    changeHighlightCourse: (state) => ({
       ...state,
     }),
-    changeHighlightPackageFailure: (state) => ({
+    changeHighlightCourseSuccess: (state) => ({
+      ...state,
+    }),
+    changeHighlightCourseFailure: (state) => ({
       ...state,
     }),
 
@@ -139,26 +139,26 @@ const packageSlice = createSlice({
 });
 
 export const {
-  getListDataPackage,
-  getListDataPackageSuccess,
-  getListDataPackageFailure,
-  createPackage,
-  createPackageSuccess,
-  createPackageFailure,
-  updatePackage,
-  updatePackageSuccess,
-  updatePackageFailure,
-  deletePackage,
-  deletePackageSuccess,
-  deletePackageFailure,
-  setShowModalDeletePackage,
-  setShowModalCreateOrUpdatePackage,
-  setConfigModalPackage,
-  setInfoPackages,
-  setErrorInfoPackages,
-  changeHighlightPackage,
-  changeHighlightPackageSuccess,
-  changeHighlightPackageFailure,
+  getListDataCourse,
+  getListDataCourseSuccess,
+  getListDataCourseFailure,
+  createCourse,
+  createCourseSuccess,
+  createCourseFailure,
+  updateCourse,
+  updateCourseSuccess,
+  updateCourseFailure,
+  deleteCourse,
+  deleteCourseSuccess,
+  deleteCourseFailure,
+  setShowModalDeleteCourse,
+  setShowModalCreateOrUpdateCourse,
+  setConfigModalCourse,
+  setInfoCourses,
+  setErrorInfoCourses,
+  changeHighlightCourse,
+  changeHighlightCourseSuccess,
+  changeHighlightCourseFailure,
 
   //Thêm
   setDataFilterCourse,
@@ -169,6 +169,6 @@ export const {
 
   //Lớp học học viên chọn để học của khóa học muốn đki
   setClassRegisterOfCourse,
-} = packageSlice.actions;
+} = courseSlice.actions;
 
-export default packageSlice.reducer;
+export default courseSlice.reducer;

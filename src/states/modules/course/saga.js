@@ -1,43 +1,43 @@
 import { all, call, fork, put, takeLatest } from 'redux-saga/effects';
 import { setBreadcrumb, setTitlePage } from '../app/index.js';
-import { handleGetListDataPackages } from '../../../api/package/index.js';
+import { handleGetListDataCourses } from '../../../api/course/index.js';
 import {
-  changeHighlightPackageFailure,
-  changeHighlightPackageSuccess,
-  createPackageFailure,
-  createPackageSuccess,
-  deletePackageFailure,
-  deletePackageSuccess,
-  setErrorInfoPackages,
-  setShowModalCreateOrUpdatePackage,
-  setShowModalDeletePackage,
-  updatePackageFailure,
-  updatePackageSuccess,
+  changeHighlightCourseFailure,
+  changeHighlightCourseSuccess,
+  createCourseFailure,
+  createCourseSuccess,
+  deleteCourseFailure,
+  deleteCourseSuccess,
+  setErrorInfoCourses,
+  setShowModalCreateOrUpdateCourse,
+  setShowModalDeleteCourse,
+  updateCourseFailure,
+  updateCourseSuccess,
 } from './index.js';
 import { getNotification } from '../../../utils/helper.js';
 import _ from 'lodash';
 import { requestConfig } from '@/api/config/index.js';
 
 function* loadRouteData() {
-  yield put(handleGetListDataPackages());
+  yield put(handleGetListDataCourses());
   yield put(requestConfig());
 }
 
 function* handleActions() {
-  yield takeLatest(createPackageSuccess, function* () {
-    yield put(setShowModalCreateOrUpdatePackage(false));
-    yield put(handleGetListDataPackages());
+  yield takeLatest(createCourseSuccess, function* () {
+    yield put(setShowModalCreateOrUpdateCourse(false));
+    yield put(handleGetListDataCourses());
     getNotification('success', 'Tại mới khóa học thành công');
   });
 
-  yield takeLatest(createPackageFailure, function* (action) {
+  yield takeLatest(createCourseFailure, function* (action) {
     const errorStatus = action.payload.data.status;
 
     if (errorStatus === 400) {
       const errors = action.payload.data.detail;
 
       yield put(
-        setErrorInfoPackages({
+        setErrorInfoCourses({
           name: _.get(errors, 'name', ''),
           description: _.get(errors, 'description', ''),
           point: _.get(errors, 'point', ''),
@@ -50,20 +50,20 @@ function* handleActions() {
     }
   });
 
-  yield takeLatest(updatePackageSuccess, function* () {
-    yield put(setShowModalCreateOrUpdatePackage(false));
-    yield put(handleGetListDataPackages());
+  yield takeLatest(updateCourseSuccess, function* () {
+    yield put(setShowModalCreateOrUpdateCourse(false));
+    yield put(handleGetListDataCourses());
     getNotification('success', 'Cập nhật khóa học thành công');
   });
 
-  yield takeLatest(updatePackageFailure, function* (action) {
+  yield takeLatest(updateCourseFailure, function* (action) {
     const errorStatus = action.payload.data.status;
 
     if (errorStatus === 400) {
       const errors = action.payload.data.detail;
 
       yield put(
-        setErrorInfoPackages({
+        setErrorInfoCourses({
           name: _.get(errors, 'name', ''),
           description: _.get(errors, 'description', ''),
           point: _.get(errors, 'point', ''),
@@ -76,22 +76,22 @@ function* handleActions() {
     }
   });
 
-  yield takeLatest(deletePackageSuccess, function* () {
-    yield put(setShowModalDeletePackage(false));
-    yield put(handleGetListDataPackages());
+  yield takeLatest(deleteCourseSuccess, function* () {
+    yield put(setShowModalDeleteCourse(false));
+    yield put(handleGetListDataCourses());
     getNotification('success', 'Xóa khóa học thành công');
   });
 
-  yield takeLatest(deletePackageFailure, function* () {
+  yield takeLatest(deleteCourseFailure, function* () {
     yield call(getNotification, 'error', 'Có lỗi xảy ra, vui lòng thử lại sau.');
   });
 
-  yield takeLatest(changeHighlightPackageSuccess, function* () {
-    yield put(handleGetListDataPackages());
+  yield takeLatest(changeHighlightCourseSuccess, function* () {
+    yield put(handleGetListDataCourses());
     getNotification('success', 'Cập nhật khóa học phổ biến thành công');
   });
 
-  yield takeLatest(changeHighlightPackageFailure, function* () {
+  yield takeLatest(changeHighlightCourseFailure, function* () {
     yield call(getNotification, 'error', 'Có lỗi xảy ra, vui lòng thử lại sau.');
   });
 }

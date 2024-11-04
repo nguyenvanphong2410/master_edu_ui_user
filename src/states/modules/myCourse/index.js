@@ -41,7 +41,7 @@ const myCourseSlice = createSlice({
     getListMyCoursesDoneSuccess: (state, action) => ({
       ...state,
       isLoadingMyCoursesDone: false,
-      myCoursesDone: action.payload.data.packages,
+      myCoursesDone: action.payload.data.courses,
       paginationListCoursesDone: {
         currentPage: action.payload.data.page,
         perPage: action.payload.data.per_page,
@@ -66,7 +66,7 @@ const myCourseSlice = createSlice({
     getListInProgressSuccess: (state, action) => ({
       ...state,
       isLoadingInProgress: false,
-      myCoursesInProgress: action.payload.data.packages,
+      myCoursesInProgress: action.payload.data.courses,
       paginationListCoursesInProgress: {
         currentPage: action.payload.data.page,
         perPage: action.payload.data.per_page,
@@ -91,7 +91,7 @@ const myCourseSlice = createSlice({
     getListPendingSuccess: (state, action) => ({
       ...state,
       isLoadingPending: false,
-      myCoursesPending: action.payload.data.packages,
+      myCoursesPending: action.payload.data.courses,
       paginationListCoursesPending: {
         currentPage: action.payload.data.page,
         perPage: action.payload.data.per_page,

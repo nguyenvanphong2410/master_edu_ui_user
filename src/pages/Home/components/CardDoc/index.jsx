@@ -9,12 +9,12 @@ import imageDefaultClass from '@/assets/images/default/image-default.png';
 import moment from 'moment';
 import { useNavigate } from 'react-router-dom';
 import { setCourseSelectedToOrder } from '@/states/modules/order';
-import { setClassRegisterOfCourse } from '@/states/modules/package';
+import { setClassRegisterOfCourse } from '@/states/modules/course';
 
 const CardDoc = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const packages = useSelector((state) => state.package.packages);
+  const courses = useSelector((state) => state.course.courses);
   const authUser = useSelector((state) => state.auth.authUser);
   console.log('🌈 ~ CardDoc ~ authUser:', authUser);
 
@@ -49,7 +49,7 @@ const CardDoc = () => {
         Với lỗ lực đem đến những khóa học ngoại ngữ phù hợp và chất lượng
       </div>
       <Row gutter={[10, 10]}>
-        {packages?.map((item, index) => {
+        {courses?.map((item, index) => {
           const isSelectedCourse = item._id === selectedCourseId; // Kiểm tra xem có phải khóa học đang được chọn không
           return (
             <Col xs={24} sm={24} md={24} lg={12} key={index}>
@@ -79,7 +79,7 @@ const CardDoc = () => {
                     <div className={`${styles.titleCourseCard}`}>
                       <span className={`${styles.titleCard}`}>Thông tin khóa học</span>
                       {
-                        !authUser.userPackages.some((itemPkg) => itemPkg?._id === item?._id) && (
+                        !authUser.userCourses.some((itemPkg) => itemPkg?._id === item?._id) && (
                           <Button
                             type="primary"
                             size={'large'}
@@ -124,7 +124,7 @@ const CardDoc = () => {
                       
 
                       {
-                        !authUser.userPackages.some((itemPkg) => itemPkg?._id === item?._id) && (
+                        !authUser.userCourses.some((itemPkg) => itemPkg?._id === item?._id) && (
                           <div className={`${styles.infoItem}`}>
                             <span className={`${styles.nameField}`}>- Chọn lớp:</span>
                             <span className={`${styles.contentField}`}>
