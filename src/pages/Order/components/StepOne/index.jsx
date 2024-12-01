@@ -44,7 +44,7 @@ function StepOne() {
               <Divider className="bg-[#252839] my-2 md:my-4" />
               <div className="flex mb-2 flex-wrap">
                 <span className="mr-auto text-sm md:text-base">Số tiền cần thanh toán:</span>
-                <span className="ml-auto font-bold text-sm md:text-base">500.000đ</span>
+                <span className="ml-auto font-bold text-sm md:text-base">{formatMoney(courseSelectedToOrder?.current_price)}</span>
               </div>
               <div className="flex flex-col justify-center items-center gap-5 mt-6">
                 <Button 

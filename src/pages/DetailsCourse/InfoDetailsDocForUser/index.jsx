@@ -100,7 +100,7 @@ const InfoDetailsDocForUser = () => {
               <Button
                 type="primary"
                 size="large"
-                className="main-btn-primary-register"
+                className="main-btn-primary"
                 onClick={() => handleClickRegisterCourse(courseDetails)}
               >
                 Đăng ký ngay

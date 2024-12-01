@@ -1,6 +1,8 @@
+@import "../../../../assets/scss/variables.scss";
+
 .infoAboutWrap {
     margin-top: 100px;
-    background: #dfdede;
+    background: $colorGray;
     padding: 100px;
 
     .textRight {
@@ -13,12 +15,12 @@
     h2 {
         font-size: 30px;
         font-weight: 700;
-        color: #322f68;
+        color: $colorBlueStrong;
     }
 
     .textDes {
         font-size: 20px;
-        color: gray;
+        color: $colorGrayStrong;
         margin-top: 30px;
         text-align: justify;
     }

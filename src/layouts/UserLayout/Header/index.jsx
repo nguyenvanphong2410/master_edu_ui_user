@@ -78,7 +78,7 @@ const goToAboutTop = () => {
                 className={path === '/my-courses' ? `${styles.navItem} ${styles.activePath}` : styles.navItem}
                 onClick={() => navigate('/my-courses')}
               >
-                Khóa học của bạn
+                Khóa học của tôi
               </li>
               <li
                 className={path === '/intro' ? `${styles.navItem} ${styles.activePath}` : styles.navItem}

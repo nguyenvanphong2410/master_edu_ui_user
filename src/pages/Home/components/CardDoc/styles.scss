@@ -1,3 +1,5 @@
+@import "../../../../assets/scss/variables.scss";
+
 * {
 	padding: 0;
 	margin: 0;
@@ -7,7 +9,7 @@
 h1 {
 	font-size: 5.25vmin;
 	text-align: center;
-	color: white;
+	color: $colorWhite;
 }
 
 .wrap {
@@ -24,19 +26,19 @@ h1 {
 	border-top-right-radius: 15px;
 	border-bottom-right-radius: 50px;
 	border-bottom-left-radius: 15px;
-	box-shadow: rgba(0, 0, 0, 0.4) 0px 20px 20px -7px;	 
+	box-shadow: rgba(0, 0, 0, 0.4) 0px 20px 20px -7px;
 }
 
 .text-name-course {
 	position: absolute;
-	background-color: #9617d1;
+	background-color: $colorMain;
 	border-top-left-radius: 20px;
 	border-bottom-left-radius: 5px;
 	border-bottom-right-radius: 20px;
 	border-top-right-radius: 5px;
 	font-size: 25px;
 	text-align: center;
-	color: white;
+	color: $colorWhite;
 	font-weight: 700;
 	white-space: nowrap;
 	padding: 5px 10px;
@@ -47,23 +49,23 @@ h1 {
 	position: absolute;
 	bottom: 0;
 	font-size: 14px;
-    padding: 6px;
-    border-radius: 20px;
-    width: 100%;
-    white-space: nowrap;
+	padding: 6px;
+	border-radius: 20px;
+	width: 100%;
+	white-space: nowrap;
 }
 
 .discount {
-	color: red;
+	color: $colorRed;
 	font-weight: 700;
 	text-decoration: line-through;
 	font-style: italic;
-}	
+}
 
 .price-now {
-	color: rgb(15, 185, 15);
+	color: $colorGreen;
 	font-weight: 700;
-	text-decoration: unset ;
+	text-decoration: unset;
 
 }
 
@@ -88,9 +90,9 @@ h1 {
 	border: 5px solid;
 	border-image:
 		linear-gradient(to bottom,
-			#9617d1 5%,
-			#9617d1 35% 65%,
-			#06a01f 95%) 0 0 0 100%;
+			$colorMain 5%,
+			$colorMain 35% 65%,
+			$colorGreen 95%) 0 0 0 100%;
 	transition: .3s ease-in-out .2s;
 	z-index: 1;
 }
@@ -116,7 +118,7 @@ h1 {
 	width: 55px;
 	height: 4vmin;
 	transition: .3s ease-in-out .3s;
-	background-color: rgba(0 0 0 );
+	background-color: $colorBlack;
 	border-top-left-radius: 14px;
 	border-top-right-radius: 5px;
 	border-bottom-right-radius: 14px;
@@ -127,7 +129,7 @@ h1 {
 .dot {
 	width: 10px;
 	height: 10px;
-	background: rgb(183, 33, 241);
+	background: $colorMain;
 	border-radius: 50%;
 	transition: .3s ease-in-out .3s;
 }
@@ -139,13 +141,13 @@ h1 {
 	width: 60vmin;
 	height: 100%;
 	padding: 3vmin 4vmin;
-	background: #fff;
+	background: $colorWhite;
 	box-shadow: inset 1px 1px 15px 0 rgba(0 0 0 / .4);
 	overflow-y: scroll;
 }
 
 .text-des {
-	color: grey !important;
+	color: $colorGrayStrong !important;
 }
 
 .wrap:hover {
@@ -167,7 +169,7 @@ h1 {
 }
 
 .wrap:hover .text-price-course {
-	background-image: linear-gradient(to right, #2e2c64 , #2e2c64  , #2e2c64 ,transparent);
+	background-image: linear-gradient(to right, #2e2c64, #2e2c64, #2e2c64, transparent);
 	border-radius: 10px;
 }
 
@@ -183,7 +185,7 @@ h1 {
 }
 
 .wrap:hover .dots .dot {
-	background: white;
+	background: $colorWhite;
 }
 
 

@@ -1,3 +1,5 @@
+@import "../../../../assets/scss/variables.scss";
+
 .testimonialWrap {
   margin: 100px auto;
   margin-top: 140px;
@@ -6,21 +8,25 @@
     text-align: center;
     .title {
       word-wrap: break-word;
-      color: #322f68;
+      color: $colorBlueStrong;
       font-size: 50px;
       font-weight: 700;
       line-height: 60px;
+
+      .titlePart {
+        color: $colorMain;
+    }
     }
 
     .line {
-      background-color: #fff;
+      background-color: $colorWhite;
       display: inline-block;
       height: 1px;
       position: relative;
       width: 270px;
 
       &::before {
-        background-color: #fff;
+        background-color: $colorWhite;
         border-radius: 2px;
         content: "";
         display: inline-block;
@@ -34,7 +40,7 @@
     }
 
     .subtitle {
-      color: #322f68;
+      color: $colorMain;
       font-size: 20px;
       text-align: center;
       font-weight: 300;

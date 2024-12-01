@@ -1,3 +1,4 @@
+@import "../../.././././../../assets/scss/variables.scss";
 .modalInfoWrap {
   &::before {
     @apply absolute content-[''] h-3 w-3 -top-1.5 right-5 rounded-t-[1px] bg-gray-100 transform rotate-45
@@ -8,7 +9,7 @@
       width: 70px;
       height: 70px;
       border-radius: 50px;
-      border: 2px solid #b718ee;
+      border: 2px solid $colorMain;
       margin-bottom: 10px;
       object-fit: cover;
     }
@@ -16,7 +17,7 @@
       @apply text-sm text-black-20 font-bold
     }
     .role {
-      color: rgb(170, 167, 167);
+      color: $colorGrayStrong;
       @apply text-xs
     }
     @apply flex justify-center items-center flex-col p-[13px] border-b
