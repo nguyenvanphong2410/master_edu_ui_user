@@ -2,19 +2,19 @@ import React from 'react';
 import styles from './style.module.scss';
 import { Pagination } from 'antd';
 import { useDispatch, useSelector } from 'react-redux';
-import { setDataFilterCourse } from '@/states/modules/package';
-import { handleGetListDataPackages } from '@/api/package';
+import { setDataFilterCourse } from '@/states/modules/course';
+import { handleGetListDataCourses } from '@/api/course';
 
 function PaginationDocument() {
     const dispatch = useDispatch();
 
-    const dataFilter = useSelector(state => state.package.dataFilter)
-    const paginationListDocument = useSelector((state) => state.package.paginationListCourse);
+    const dataFilter = useSelector(state => state.course.dataFilter)
+    const paginationListDocument = useSelector((state) => state.course.paginationListCourse);
 
 
     const handleChangePage = (e) => {
         dispatch(setDataFilterCourse({ ...dataFilter, page: e }))
-        dispatch(handleGetListDataPackages());
+        dispatch(handleGetListDataCourses());
     }
     return (
         <div className={styles.paginationWrap}>

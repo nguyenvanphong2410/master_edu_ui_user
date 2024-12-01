@@ -1,5 +1,6 @@
+@import "../../../assets/scss/variables.scss";
 .footerWrap {
-    background-color: rgb(0, 0, 0);
+    background-color: $colorBlack;
     margin-top: 50px;
     .rowFooterWrap {
         display: flex;
@@ -17,13 +18,12 @@
 
                 .textTwo {
                     margin: 10px 0;
-                    color: rgb(255, 255, 255);
+                    color: $colorWhite;
                     font-weight: 700;
-
                 }
 
                 .textTwoInfo {
-                    color: rgb(255, 255, 255);
+                    color: $colorWhite;
                     font-weight: 700;
                     text-align: justify;
                 }
@@ -35,7 +35,7 @@
 
                 .textAsk {
                     margin: 10px 0;
-                    color: rgb(255, 255, 255);
+                    color: $colorWhite;
                     font-weight: 700;
 
                 }

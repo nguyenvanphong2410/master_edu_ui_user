@@ -18,7 +18,7 @@ export default function Feedback() {
     <div className={`${styles.testimonialWrap}`}>
       <div className={`${styles.titleWrap}`}>
         <div className={`text-center fs-60 ${styles.title}`}>
-          Học Viên <span className="text-[#bd16eb]">Đang Nói Gì</span>
+          Học Viên <span className={`${styles.titlePart}`}>Đang Nói Gì</span>
         </div>
         <div className={`${styles.line}`}></div>
         <div className={`${styles.subtitle}`}>Cảm nhận của học viên sau khi tham gia những khóa học</div>

@@ -18,7 +18,7 @@ import {
   getListClasses
 } from '@/api/class';
 import { setBreadcrumb, setTitlePage } from '../app';
-import { getAllCourses } from '@/api/package';
+import { getAllCourses } from '@/api/course';
 import { requestGetAllTeachers } from '@/api/teacher';
 
 function* loadRouteData() {

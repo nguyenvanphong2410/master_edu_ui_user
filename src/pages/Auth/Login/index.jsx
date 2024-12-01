@@ -14,7 +14,7 @@ function Login() {
   } = Handle();
 
   return (
-    <AuthLayout title={'Đăng nhập'} description={'Hệ thống hoàng edu'}>
+    <AuthLayout title={'Đăng nhập'} description={'Hệ thống Master Edu'}>
       <div className={`input-wrap`}>
         <Input
           className={`base-input ${errorLogin && errorLogin.email?.length > 0 ? 'error-input' : ''}`}

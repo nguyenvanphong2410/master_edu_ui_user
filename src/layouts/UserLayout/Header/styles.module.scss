@@ -1,3 +1,5 @@
+@import "../../../assets/scss/variables.scss";
+
 .headerWrap {
   position: fixed;
   background: white;
@@ -12,14 +14,18 @@
     .headerLeftWrap {
       padding: 10px;
       width: 300px;
+
       .logoHeader {
 
         .imgWrap {
           img {
-            transition: transform 0.8s ease, box-shadow 0.3s ease; /* Thêm thuộc tính transition */
+            transition: transform 0.8s ease, box-shadow 0.3s ease;
+
+            /* Thêm thuộc tính transition */
             &:hover {
               transform: scale(1.2)
             }
+
             @apply object-cover cursor-pointer w-auto h-[60px];
           }
         }
@@ -39,12 +45,18 @@
         margin-top: 5px;
 
         .activePath {
-          color: #b21dda !important;
+          color: $colorMain !important;
         }
 
         .navItem {
-          color: gray;
-          @apply py-2 px-3 lg:hover:text-[#b21dda] block font-semibold text-[16px] cursor-pointer
+          color: $colorGrayStrong;
+
+          &:hover {
+            color: $colorMain;
+
+          }
+
+          @apply py-2 px-3 block font-semibold text-[16px] cursor-pointer
         }
 
         @apply flex space-x-5;
@@ -68,7 +80,7 @@
           .avatarWrap {
             img {
               border-radius: 50%;
-              border: 3px solid #b21dda;
+              border: 3px solid $colorMain;
               @apply w-full h-full object-cover
             }
 

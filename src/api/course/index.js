@@ -2,33 +2,33 @@ import {
   getListDetailsCourse,
   getListDetailsCourseFailure,
   getListDetailsCourseSuccess,
-} from '@/states/modules/package/detailsCourse';
+} from '@/states/modules/course/detailsCourse';
 import {
-  changeHighlightPackage,
-  changeHighlightPackageFailure,
-  changeHighlightPackageSuccess,
-  createPackage,
-  createPackageFailure,
-  createPackageSuccess,
-  deletePackage,
-  deletePackageFailure,
-  deletePackageSuccess,
+  changeHighlightCourse,
+  changeHighlightCourseFailure,
+  changeHighlightCourseSuccess,
+  createCourse,
+  createCourseFailure,
+  createCourseSuccess,
+  deleteCourse,
+  deleteCourseFailure,
+  deleteCourseSuccess,
   getAllCourse,
   getAllCourseFailure,
   getAllCourseSuccess,
-  getListDataPackage,
-  getListDataPackageFailure,
-  getListDataPackageSuccess,
-  updatePackage,
-  updatePackageFailure,
-  updatePackageSuccess,
-} from '../../states/modules/package';
+  getListDataCourse,
+  getListDataCourseFailure,
+  getListDataCourseSuccess,
+  updateCourse,
+  updateCourseFailure,
+  updateCourseSuccess,
+} from '../../states/modules/course';
 import callApi from '../callApi';
 
 export const getAllCourses = () => async (dispatch, getState) => {
   return callApi({
     method: 'get',
-    apiPath: '/user/packages/all',
+    apiPath: '/user/courses/all',
     actionTypes: [getAllCourse, getAllCourseSuccess, getAllCourseFailure],
     variables: {},
     dispatch,
@@ -36,9 +36,9 @@ export const getAllCourses = () => async (dispatch, getState) => {
   });
 };
 
-export const handleGetListDataPackages = () => async (dispatch, getState) => {
-  const dataFilter = getState().package.dataFilter;
-  let path = `packages?per_page=${dataFilter.perPage}&page=${dataFilter.page}`;
+export const handleGetListDataCourses = () => async (dispatch, getState) => {
+  const dataFilter = getState().course.dataFilter;
+  let path = `courses?per_page=${dataFilter.perPage}&page=${dataFilter.page}`;
 
   if (dataFilter.keySearch) {
     path += `&q=${dataFilter.keySearch}`;
@@ -51,14 +51,14 @@ export const handleGetListDataPackages = () => async (dispatch, getState) => {
   return callApi({
     method: 'get',
     apiPath: path,
-    actionTypes: [getListDataPackage, getListDataPackageSuccess, getListDataPackageFailure],
+    actionTypes: [getListDataCourse, getListDataCourseSuccess, getListDataCourseFailure],
     variables: {},
     dispatch,
     getState,
   });
 };
 
-export const handleCreatePackages = (data) => async (dispatch, getState) => {
+export const handleCreateCourses = (data) => async (dispatch, getState) => {
   const headers = {
     'Content-Type': 'multipart/form-data',
   };
@@ -82,8 +82,8 @@ export const handleCreatePackages = (data) => async (dispatch, getState) => {
 
   return callApi({
     method: 'post',
-    apiPath: '/user/packages',
-    actionTypes: [createPackage, createPackageSuccess, createPackageFailure],
+    apiPath: '/user/courses',
+    actionTypes: [createCourse, createCourseSuccess, createCourseFailure],
     variables: form,
     dispatch,
     getState,
@@ -91,7 +91,7 @@ export const handleCreatePackages = (data) => async (dispatch, getState) => {
   });
 };
 
-export const handleUpdatePackages = (id, data) => async (dispatch, getState) => {
+export const handleUpdateCourses = (id, data) => async (dispatch, getState) => {
   const headers = {
     'Content-Type': 'multipart/form-data',
   };
@@ -117,8 +117,8 @@ export const handleUpdatePackages = (id, data) => async (dispatch, getState) => 
 
   return callApi({
     method: 'put',
-    apiPath: `/user/packages/${id}`,
-    actionTypes: [updatePackage, updatePackageSuccess, updatePackageFailure],
+    apiPath: `/user/courses/${id}`,
+    actionTypes: [updateCourse, updateCourseSuccess, updateCourseFailure],
     variables: form,
     dispatch,
     getState,
@@ -126,22 +126,22 @@ export const handleUpdatePackages = (id, data) => async (dispatch, getState) => 
   });
 };
 
-export const handleDeletePackages = (id) => async (dispatch, getState) => {
+export const handleDeleteCourses = (id) => async (dispatch, getState) => {
   return callApi({
     method: 'delete',
-    apiPath: `/user/packages/${id}`,
-    actionTypes: [deletePackage, deletePackageSuccess, deletePackageFailure],
+    apiPath: `/user/courses/${id}`,
+    actionTypes: [deleteCourse, deleteCourseSuccess, deleteCourseFailure],
     variables: {},
     dispatch,
     getState,
   });
 };
 
-export const handleChangeHighlightPackage = (id) => async (dispatch, getState) => {
+export const handleChangeHighlightCourse = (id) => async (dispatch, getState) => {
   return callApi({
     method: 'patch',
-    apiPath: `/user/packages/${id}/highlighted`,
-    actionTypes: [changeHighlightPackage, changeHighlightPackageSuccess, changeHighlightPackageFailure],
+    apiPath: `/user/courses/${id}/highlighted`,
+    actionTypes: [changeHighlightCourse, changeHighlightCourseSuccess, changeHighlightCourseFailure],
     variables: {},
     dispatch,
     getState,
@@ -149,7 +149,7 @@ export const handleChangeHighlightPackage = (id) => async (dispatch, getState) =
 };
 
 export const requestGetDetailsCourseForUser = (id) => async (dispatch, getState) => {
-  let path = `packages/${id}`;
+  let path = `courses/${id}`;
 
   return callApi({
     method: 'get',

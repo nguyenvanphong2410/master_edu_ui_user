@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './styles.scss';
 import UserLayout from '@/layouts/UserLayout/index.jsx';
 import styles from './styles.module.scss';
@@ -11,7 +11,10 @@ import Feedback from './components/Feedback';
 
 function Home() {
   const [scrollPosition, setScrollPosition] = useState(0);
-  const showBackToTopButton = scrollPosition > 250; // Hiển thị nút khi cuộn xuống 300px
+  const showBackToTopButton = scrollPosition > 250;
+
+  const infoAboutRef = useRef(null);
+  const feedbackRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,14 +28,41 @@ function Home() {
     };
   }, []);
 
+  // Hàm để cuộn đến InfoAbout
+  const scrollToInfoAbout = () => {
+    if (infoAboutRef.current) {
+      infoAboutRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  // Hàm để cuộn về đầu trang
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  // Hàm để cuộn đến Feedback
+  const scrollToFeedback = () => {
+    if (feedbackRef.current) {
+      feedbackRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <UserLayout>
+    <UserLayout
+      onScrollToInfoAbout={scrollToInfoAbout}
+      onScrollToTop={scrollToTop}
+      onScrollToFeedback={scrollToFeedback}
+    >
       <div className={styles.sliderHeading}>
         <CarouselCpn />
         <CardDoc />
-        <InfoAbout />
+        <div ref={infoAboutRef}>
+          <InfoAbout />
+        </div>
         <StudyRoadmap />
-        <Feedback />
+        <div ref={feedbackRef}>
+          <Feedback />
+        </div>
       </div>
       <div
         style={{
@@ -53,9 +83,9 @@ function Home() {
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
       >
         <a href="https://zalo.me/0333402699">
-        <img style={{ width: '100%' }} src={Zalo} alt="zalo"/>
+          <img style={{ width: '100%' }} src={Zalo} alt="zalo" />
         </a>
-      </div>  
+      </div>
       {showBackToTopButton && (
         <div
           style={{
@@ -72,7 +102,8 @@ function Home() {
             alignItems: 'center',
             justifyContent: 'center',
             fontSize: '14px',
-            boxShadow: 'rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px',
+            boxShadow:
+              'rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px',
             zIndex: 11111,
           }}
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}

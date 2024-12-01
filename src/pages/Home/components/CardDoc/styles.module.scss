@@ -1,19 +1,25 @@
+@import "../../../../assets/scss/variables";
+
 .cardContainer {
     margin-top: 50px;
     
     .title {
         word-wrap: break-word;
-        color: #322f68;
+        color: $colorBlueStrong;
         font-size: 50px;
         font-weight: 700;
         line-height: 60px;
         padding: 10px;
         text-align: center;
         margin-top: 150px;
+
+        .titlePart {
+            color: $colorMain;
+        }
     }
     
     .subtitle {
-        color: #b21dda;
+        color: $colorMain;
         font-size: 20px;
         text-align: center;
         font-weight: 300;
@@ -23,66 +29,12 @@
 
     .gt {
 		margin-top: 10px;
-		color: #ff5e00;
+		color: $colorOrange;
 		font-size: 12px;
 		width: 280px;
         font-style: italic;
         margin-bottom: 10px;
 	  }
-}
-
-.nameDocumentCard {
-    color: #4e4f52;
-    font-size: 20px;
-    font-weight: 700;
-
-    &:hover {
-        opacity: 0.8;
-        color: #0f2f7f;
-    }
-}
-
-.mainNavRightOption {
-    display: flex;
-    align-items: center;
-}
-
-.cardItem {
-    box-shadow: rgba(100, 100, 109, 0.3) 0px 7px 10px 0px;
-
-    &:hover {
-        transform: scale(1.04);
-        transition: transform 0.2s ease-in-out;
-        -webkit-transform: scale(1.04);
-        -moz-transform: scale(1.04);
-        -o-transform: scale(1.04);
-        -ms-transform: scale(1.04);
-    }
-
-    &:not(:hover) {
-        transform: scale(1);
-        transition: transform 0.6s ease-in-out;
-    }
-
-}
-
-.itemCard {
-
-    .iconOriginCard {
-        color: #313233;
-    }
-
-    .textOriginCard {
-        color: #303031;
-        font-size: 14px;
-
-
-    }
-
-    .infoOriginCard {
-        color: #6d7272;
-        font-size: 14px;
-    }
 }
 
 .titleCourseCard {
@@ -91,7 +43,7 @@
     justify-content: space-between;
     font-size: 20px;
     font-weight: 700;
-    color: #0f2f7f  ;
+    color: $colorBlueStrong;
     margin-bottom: 10px;
 
     .titleCard {
@@ -105,25 +57,25 @@
 
         .nameField {
             font-weight: 600;
-            color: #343232;
+            color: $colorText;
             margin-bottom: 4px;
             white-space: nowrap;
         }
 
         .contentField {
-            color: #7c7373;
+            color: $colorGrayStrong;
             margin-left: 5px;
             text-align: justify;
 
             .originalPrice {
-                color: red;
+                color: $colorRed;
                 font-style: italic;
                 text-decoration: line-through;
                 font-size: 12px;
             }
 
             .currentPrice {
-                color: green;
+                color: $colorGreen;
                 font-weight: 600;
             }
         }

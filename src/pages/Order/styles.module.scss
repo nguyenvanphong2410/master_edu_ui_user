@@ -1,3 +1,5 @@
+@import "../../assets/scss/variables.scss";
+
 .card {
     position: relative;
     border-radius: 14px;
@@ -38,7 +40,7 @@
     width: 1190px;
     height:calc(100vh - 166px);
     border-radius: 50%;
-    background-color: #b718ee;
+    background-color: $colorMain;
     opacity: 1;
     filter: blur(50px);
     animation: blob-bounce 5s infinite ease;
@@ -61,18 +63,18 @@
             >.ant-steps-item-container {
                 >.ant-steps-item-content {
                     >.ant-steps-item-title {
-                        color: #b718ee;
+                        color: $colorMain;
 
                         &::after {
-                            background-color: #252839;
+                            background-color: $colorBlueStrong;
                         }
                     }
                 }
             }
 
             .ant-steps-item-icon {
-                background-color: #b718ee;
-                border-color: #b718ee;
+                background-color: $colorMain;
+                border-color: $colorMain;
             }
         }
 
@@ -80,21 +82,21 @@
             >.ant-steps-item-container {
                 >.ant-steps-item-content {
                     >.ant-steps-item-title {
-                        color: #b718ee;
+                        color: $colorMain;
 
                         &::after {
-                            background-color: #b718ee;
+                            background-color: $colorMain;
                         }
                     }
                 }
             }
 
             .ant-steps-item-icon {
-                background-color: #f5e5ea;
-                border-color: #f5e5ea;
+                background-color: $colorGray;
+                border-color: $colorGray;
 
                 >.ant-steps-icon {
-                    color: #b718ee;
+                    color: $colorMain;
                 }
             }
         }
@@ -103,7 +105,7 @@
             >.ant-steps-item-container {
                 >.ant-steps-item-content {
                     >.ant-steps-item-title {
-                        color: #ccc6ce;
+                        color: $colorMain;
 
                         &::after {
                             background-color: #252839;
@@ -113,38 +115,38 @@
             }
 
             .ant-steps-item-icon {
-                border-color: #ccc6ce;
+                border-color: $colorMain;
                 background-color: #ca416e0f;
 
                 >.ant-steps-icon {
-                    color: #ccc6ce;
+                    color: $colorMain;
                 }
             }
         }
 
         .ant-steps-item:not(.ant-steps-item-active):not(.ant-steps-item-process)>.ant-steps-item-container[role='button']:hover .ant-steps-item-icon {
-            border-color: #b718ee;
-            color: #b718ee;
+            border-color: $colorMain;
+            color: $colorMain;
         }
 
         .ant-steps-item:not(.ant-steps-item-active)>.ant-steps-item-container[role='button']:hover .ant-steps-item-title {
-            color: #b718ee;
+            color: $colorMain;
         }
 
         .ant-steps-item:not(.ant-steps-item-active)>.ant-steps-item-container[role='button']:hover .ant-steps-item-subtitle {
-            color: #b718ee;
+            color: $colorMain;
         }
 
         .ant-steps-item:not(.ant-steps-item-active)>.ant-steps-item-container[role='button']:hover .ant-steps-item-description {
-            color: #b718ee;
+            color: $colorMain;
         }
 
         .ant-steps-item:not(.ant-steps-item-active):not(.ant-steps-item-process)>.ant-steps-item-container[role='button']:hover .ant-steps-item-icon .ant-steps-icon {
-            color: #b718ee;
+            color: $colorMain;
         }
 
         .ant-steps-item-finish>.ant-steps-item-container>.ant-steps-item-tail::after {
-            background-color: #b718ee;
+            background-color: $colorMain;
         }
 
         .ant-steps-item-process>.ant-steps-item-container>.ant-steps-item-tail::after {

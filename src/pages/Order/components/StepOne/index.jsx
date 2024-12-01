@@ -11,7 +11,7 @@ function StepOne() {
   const dispatch = useDispatch();
 
   const courseSelectedToOrder = useSelector((state) => state.order.courseSelectedToOrder);
-  const classRegisterOfCourse = useSelector((state) => state.package.classRegisterOfCourse);
+  const classRegisterOfCourse = useSelector((state) => state.course.classRegisterOfCourse);
   console.log("🌈 ~ CardDoc ~ classRegisterOfCourse:", classRegisterOfCourse);
 
   const handleClickPay = () => {
@@ -24,7 +24,7 @@ function StepOne() {
       {courseSelectedToOrder._id ? (
         <div className="flex justify-center text-white w-full ">
           <div className="max-w-[620px] md:max-w-[620px] w-full">
-            <div className={styles.packagePropertiesWrap}>
+            <div className={styles.coursePropertiesWrap}>
               <div
                 className="text-3xl md:text-4xl text-[#219bf1] text-center mb-3 md:mb-6 font-bold tex capitalize"
                 style={{ fontFamily: '"Cormorant Upright", serif' }}
@@ -44,7 +44,7 @@ function StepOne() {
               <Divider className="bg-[#252839] my-2 md:my-4" />
               <div className="flex mb-2 flex-wrap">
                 <span className="mr-auto text-sm md:text-base">Số tiền cần thanh toán:</span>
-                <span className="ml-auto font-bold text-sm md:text-base">500.000đ</span>
+                <span className="ml-auto font-bold text-sm md:text-base">{formatMoney(courseSelectedToOrder?.current_price)}</span>
               </div>
               <div className="flex flex-col justify-center items-center gap-5 mt-6">
                 <Button 
