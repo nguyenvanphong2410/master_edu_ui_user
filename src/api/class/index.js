@@ -12,6 +12,9 @@ import {
   deleteClass,
   deleteClassFail,
   deleteClassSuccess,
+  getAllClass,
+  getAllClassFailure,
+  getAllClassSuccess,
   getListClass,
   getListClassFailure,
   getListClassSuccess,
@@ -19,6 +22,17 @@ import {
   updateClassFail,
   updateClassSuccess,
 } from '@/states/modules/class';
+
+export const getAllClasses = () => async (dispatch, getState) => {
+  return callApi({
+    method: 'get',
+    apiPath: '/user/class/all',
+    actionTypes: [getAllClass, getAllClassSuccess, getAllClassFailure],
+    variables: {},
+    dispatch,
+    getState,
+  });
+};
 
 export const getListClasses = () => async (dispatch, getState) => {
   const dataFilter = getState().class.dataFilter;

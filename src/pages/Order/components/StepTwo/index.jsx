@@ -2,10 +2,15 @@ import { useSelector } from 'react-redux';
 import styles from './styles.module.scss';
 import { Button } from 'antd';
 import { formatMoney } from '@/utils/helper';
+import { useNavigate } from 'react-router-dom';
 
 function StepTwo() {
   const linkQR = useSelector((state) => state.order.linkQR);
-
+  const navigate = useNavigate();
+  const handleGotoHome = () => {
+    navigate('/')
+  }
+  
   return (
     <>
       <div className={styles.payContainer}>
@@ -29,7 +34,7 @@ function StepTwo() {
                     <p className={styles.textRemindPay}>Vui lòng thanh toán</p>
                   </>
                 )}
-                <Button className={styles.btn}>Hoàn Thành</Button>
+                <Button className={styles.btn} onClick={handleGotoHome}>Hoàn Thành</Button>
               </div>
             </div>
           ) : (
