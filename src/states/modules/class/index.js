@@ -29,7 +29,6 @@ const classSlice = createSlice({
     imageList: [],
     selectCourseId: 'default',
 
-
   },
   reducers: {
     setSelectCourseId: (state, action) => ({
@@ -148,7 +147,6 @@ const classSlice = createSlice({
       ...state,
       classSelected: action.payload,
     }),
-
   },
 });
 

@@ -196,7 +196,7 @@ const CommentForUser = () => {
         <Button
           type="primary"
           loading={isLoadingBtnCreateComment}
-          className="main-btn-primary-register mx-[5px] ml-[10px]"
+          className="main-btn-primary mx-[5px] ml-[10px]"
           size={'large'}
           onClick={() => handleSubmit(TYPE_SUBMIT.CREATE, commentSchema, infoComment)}
         >
@@ -225,7 +225,7 @@ const CommentForUser = () => {
           <Button
             type="primary"
             loading={isLoadingBtnUpdateComment}
-            className="main-btn-primary-register mx-[5px] ml-[10px]"
+            className="main-btn-primary mx-[5px] ml-[10px]"
             size={'large'}
             onClick={() => handleSubmit(TYPE_SUBMIT.UPDATE, commentSchema, infoComment)}
           >
